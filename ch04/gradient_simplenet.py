@@ -9,6 +9,8 @@ from common.gradient import numerical_gradient
 class simpleNet:
     def __init__(self):
         self.W = np.random.randn(2,3)
+        print("init W")
+        print(self.W)
 
     def predict(self, x):
         return np.dot(x, self.W)
@@ -28,4 +30,5 @@ net = simpleNet()
 f = lambda w: net.loss(x, t)
 dW = numerical_gradient(f, net.W)
 
+print("dW")
 print(dW)
